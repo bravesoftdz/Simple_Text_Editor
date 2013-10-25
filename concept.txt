@@ -1,0 +1,7 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, ..., ImgList, ToolWin;
+
