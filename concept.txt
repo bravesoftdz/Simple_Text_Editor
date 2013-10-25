@@ -5,3 +5,28 @@ interface
 uses
   Windows, Messages, ..., ImgList, ToolWin;
 
+type
+  TForm1 = class(TForm)
+    MainMenu1: TMainMenu;
+		File1: TMenuItem;
+		New1: TMenuItem;
+		Open1: TMenuItem;
+		Save1: TMenuItem;
+		Close1: TMenuItem;
+		Font1: TMenuItem;
+	...	// другие поля и/или компоненты
+    PageControl1: TPageControl;
+    ToolBar1: TToolBar;
+		ToolButton1: TToolButton;
+		...
+		ToolButton10: TToolButton;
+    ImageList1: TImageList;
+    FontDialog1: TFontDialog;
+    OpenDialog1: TOpenDialog;
+    SaveDialog1: TSaveDialog;
+    procedure New1Click(Sender: TObject);
+    procedure Save1Click(Sender: TObject);
+    procedure Open1Click(Sender: TObject);
+    procedure Close1Click(Sender: TObject);
+    procedure Font1Click(Sender: TObject);
+	...	//другие функции и процедуры
