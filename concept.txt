@@ -90,3 +90,19 @@ begin
   if PageControl1.ActivePageIndex < 0 then exit;
   PageControl1.Pages[ PageControl1.ActivePageIndex ].Free	// закрываем вкладку
 end;
+
+procedure TForm1.Font1Click(Sender: TObject);
+begin
+  if FontDialog1.Execute then
+    with RichEdits[ PageControl1.ActivePageIndex ].SelAttributes do begin	// ставим атрибуты выделенному тексту
+      Color := FontDialog1.Font.Color;
+      Name := FontDialog1.Font.Name;
+      Size := FontDialog1.Font.Size;
+      Style := FontDialog1.Font.Style;    
+    end;
+  RichEdits[PageControl1.ActivePageIndex ].SetFocus;
+end;
+
+	...	// другие процедуры
+
+end.
