@@ -50,3 +50,22 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm1.New1Click(Sender: TObject);
+begin
+   TabSheets[TabsCount] := TTabSheet.Create(PageControl1); // владельцем TabSheets[TabsCount] является PageControl1
+   TabSheets[TabsCount].Caption := 'New Tab Sheet';
+   TabSheets[TabsCount].PageControl := PageControl1; // закладка находится на PageControl1
+
+   RichEdits[TabsCount] := TRichEdit.Create(TabSheets[TabsCount]);  // владельцем RichEdits[TabsCount] является TabSheets[TabsCount]
+   with RichEdits[TabsCount] do begin
+       Visible := true;
+       Align := alClient;             // размещаем по размеру окна родителя
+       Name := 'RichEdit'+IntToStr(PageControl1.PageCount);
+       ScrollBars := ssVertical;
+       Text:='';
+       Parent := TabSheets[TabsCount];  // RichEdits[TabsCount] находится  на TabSheets[TabsCount]
+    end;
+    PageControl1.ActivePageIndex := PageControl1.PageCount - 1;	// последняя вкладка будет активной
+   TabsCount := TabsCount + 1;
+end;
