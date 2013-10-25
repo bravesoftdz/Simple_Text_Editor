@@ -69,3 +69,24 @@ begin
     PageControl1.ActivePageIndex := PageControl1.PageCount - 1;	// последняя вкладка будет активной
    TabsCount := TabsCount + 1;
 end;
+
+procedure TForm1.Save1Click(Sender: TObject);
+begin
+  if PageControl1.ActivePageIndex < 0 then exit;	// если нет вкладок - не продолжаем
+  if SaveDialog1.Execute
+    then RichEdits[ PageControl1.ActivePageIndex ].Lines.SaveToFile(SaveDialog1.FileName);
+end;
+
+procedure TForm1.Open1Click(Sender: TObject);
+begin
+  if OpenDialog1.Execute then begin
+    New1Click(Sender);						// создаём новую вкладку для открывающегося файла
+    RichEdits[ PageControl1.ActivePageIndex ].Lines.LoadFromFile(OpenDialog1.FileName);
+  end;
+end;
+
+procedure TForm1.Close1Click(Sender: TObject);
+begin
+  if PageControl1.ActivePageIndex < 0 then exit;
+  PageControl1.Pages[ PageControl1.ActivePageIndex ].Free	// закрываем вкладку
+end;
