@@ -41,4 +41,12 @@ const
    M = 10;	// длина массива
    
 var
-  Form1: TForm1;
+  Form1: TForm1;	// Form1 - объект, представитель класса TForm1
+
+  TabSheets: array [0..M] of TTabSheet;	// массив вкладок
+  RichEdits: array [0..M] of TRichEdit; // массив полей текста
+  TabsCount : Byte = 0;					// текущее количество элементов массивов
+
+implementation
+
+{$R *.dfm}
