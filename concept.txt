@@ -30,3 +30,15 @@ type
     procedure Close1Click(Sender: TObject);
     procedure Font1Click(Sender: TObject);
 	...	//другие функции и процедуры
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end; // закончили описание класса
+
+const
+   M = 10;	// длина массива
+   
+var
+  Form1: TForm1;
