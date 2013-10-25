@@ -14,7 +14,7 @@ type
 		Save1: TMenuItem;
 		Close1: TMenuItem;
 		Font1: TMenuItem;
-	...	// другие поля и/или компоненты
+	...	// РґСЂСѓРіРёРµ РїРѕР»СЏ Рё/РёР»Рё РєРѕРјРїРѕРЅРµРЅС‚С‹
     PageControl1: TPageControl;
     ToolBar1: TToolBar;
 		ToolButton1: TToolButton;
@@ -29,4 +29,4 @@ type
     procedure Open1Click(Sender: TObject);
     procedure Close1Click(Sender: TObject);
     procedure Font1Click(Sender: TObject);
-	...	//другие функции и процедуры
+	...	//РґСЂСѓРіРёРµ С„СѓРЅРєС†РёРё Рё РїСЂРѕС†РµРґСѓСЂС‹
